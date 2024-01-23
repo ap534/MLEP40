@@ -1,0 +1,12 @@
+# Dockerfile-flask
+FROM python:3.8
+
+WORKDIR /app
+
+COPY requirements-flask.txt /app/
+RUN pip install --no-cache-dir -r requirements-flask.txt
+
+COPY . /app/
+
+CMD ["python", "flask_app.py"]
+
